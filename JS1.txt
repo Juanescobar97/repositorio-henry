@@ -1,0 +1,88 @@
+JAVA SCRIPT
+
+"VARIABLES"
+una variabñe es una forma de almacenar el valor de algo para usar mas tarde.(Java Script es un lenguaje de tipado dinamico,
+una variable se puede configurar y restablecer a cualquier tipo, no necesitamos declarar su tipo al iniciar la variable..
+
+Para crear una variable en JavaScript usamos la palabra clabe 'var', seguida de un espacio y el nombre de la variable
+(con este nombre podremos hacer referencia a ella luego). Ademas de declarar una variable, podemos asignarle un valor usando el
+signo '='.
+Nota: Las palabras claves o keywords son palabras especiales que utiliza el lenguaje para indicar algo. No podremos usar las
+palabras claves del lenguaje como nombres de variables.
+ejemplo: var palabra // var = 25+1
+
+Existen tres formas de declarar una variable:
+
+VAR
+
+Es la forma de declarar una variable en ES5 (ES5 es la version de JS, hoy en dia existe ES6 que es la nueva version, pero
+que todavia no es la mas usada). Esta es una palabra clave generica para "variable".
+
+Las dos formas siguientes, si bien son validas, vamos a utilizarlas mas adelante en la carrera, cuando tengamos mas claros los
+otros conceptos:
+
+LET
+Es una nueva palabra clave de ES6, esto asignara una variable muy similar a 'var', pero con un comportamiento un poco diferente. Lo
+mas notables es que difiere al crear un "nivel de scope"(Hablaremos de esto mas adelante).
+
+CONST
+Tambien es nuevo en ES6. Un 'const' es una variable que no se podra cambiar. Esto es una abreviatura para "constante"
+ej:
+var nombre = 'Juan';//vamo a usar principalmente esta forma
+let apellido = 'Perez';
+const comidafavorita = 'pizza';
+
+CONSOLE.LOG
+Otro concepto del que hablaremos de inmediato es: console.log()
+Este metodo es muy simple, nos permitira imprimir en la consola todo lo que pongamos entre parentesis.
+
+TIPOS DE DATOS
+
+En ciencias de la computacion, un tipo de dato informatico o simplemente tipo, es un atributo de los datos que indica la clase
+de datos que se va a manejar. Esto incluye imponer restricciones en los datos, como que valores pueden tomar y que operaciones se
+pueden realizar.
+
+Los tipos de datos aceptados varian segun el lenguaje.
+
+Los tipos de datos mas basicos en JavaScript son strigns, numbers and booleans.
+
+Strings
+Las "strings" son bloques de texto, siempre se definiran entre comillas, ya sea simple o doble. Cualquier texto entre comillas
+es una cadena o string. ejemplo: var nombrePerro = 'Firulais';
+                                 var nombrePerro = "firulais";
+Numbers
+Los numeros son solo eso, numeros. Los numeros NO se envuelven en comillas. Pueden ser negativos tambien. En JavaScript tiene
+una limitacion en el tamaño del numero (+/-9007199254740991), pero muy raramente aparecera esa limitacion en nuestro uso diario.
+var positivo = 27;
+var negativo = -40;
+
+Boolean
+Los booleanos provienen de la logica de boole. Es un concepto que alimenta el codigo binario y el nucleo de las computadoras. Es
+posible que haya visto codigo vinario en el pasado(0001 0110..), esto es logica booleana. Escencialmente significa que tiene dos 
+opciones, activar o desactivar, 0 o 1, verdadero o falso. En JavaScript usamos booleanos para significar verdadero o falso. Esto
+puede parecer simple al principio, pero puede complicarse mas adelante.
+
+ejemplo : var meEncantaJavascript = true;
+
+Los valores posibles de un dato booleano en JS son: true o false.
+
+OPERADORES
+Vamos a poder realizar operaciones en JS a traves de los operadores. Basicamente son simbolos que ya conocemos(+,-,*,/)
+que indican al interprete de JS las operaciones que debe realizar.
+
+Por ejemplo:  Para el interprete al ver el signo +, sabe que tiene que ejecutar la funcion suma(que tiene internamente definida), y
+toma como parametros los terminos que esten a la izquierda y la derecha del operador.
+
+ejemplo:  a = 2 + 3; // a = 5
+          b = 3 / 3; // b = 1
+
+De hecho, esa forma de escribir tiene un nombre particular, se llama notacion notacion o 'infix' o 'infija', en ella se escribe el 
+operador entre los operandos. Pero tambien existen otro tipo de notacion como las 'postfix' o 'postfija' y la 'prefix' o la 'prefija'
+En esta ultima el operador va a la derecha de los operandos o a la izquierda respectivamente.
+
+Infix expression | Prefix expression | Postfix expression
+----------------------------------------------------------
+A + B            | + A B             | A B +
+A + B * C        | + A * B C         | A B C * +
+
+En fin, lo importante a tener en cuenta es que los operadores son funciones.
