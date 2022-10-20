@@ -86,3 +86,34 @@ A + B            | + A B             | A B +
 A + B * C        | + A * B C         | A B C * +
 
 En fin, lo importante a tener en cuenta es que los operadores son funciones.
+
+
+PROCEDENCIA DE OPERADORES Y ASOCIATIVIDAD
+
+Esto parece aburrito, pero nos va a ayudar a saber como piensa el interprete y bajo que regrlas actua.
+La procedencia de operadores es basicamente el orden en que se van a llamar las funciones de los operadores. Estas funciones
+son llamadas en ORDEN DE PRECEDENCIA(las que tienen MAYOR procedencia se ejecutan primero). O sea que si tenemos mas de un
+operador, el interprete va a llamar al operador de mayor procedencia primero y despues va a seguir con los demas.
+La 'Asociatividad de operadores' es el orden en el que se ejecutan los operadores cuando tienen la misma precedencia,
+es decir, de izquierda a dereaha o de derecha a izquierda.
+Podemos ver la documentacion completa sobre Procedencia y Asociatividad de los operadores de JS en: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table
+Por ejemplo: console.log( 3 + 4 * 5) Para resolver esa expresion y saber que resultado nos va a mostrar el interprete
+deberiamos conocer en que orden ejecuta las operaciones. Al ver la tabla del link de arriba, vemos que la multiplicacion tiene una
+precedencia de 15, y la suma de 14. Por lo tanto el interprete primero va a ejecutar la multiplicacion y luego la suma con el 
+resultado de lo anterior -> console.log( 3 + 20 ) -> console.log(23)
+Cuando invocamos una funcion en JavaScript, los argumentos son evaluados primeros(se conoce como 'non-lazy evaluation'),
+esta definido con la especificacion.
+No confundir el orden de ejecucion con asociatividad y procedencia.
+Ahora si tuvieramos la misma procedencia estaria en juego la asociatividad, veamos un ejemplo:
+
+var a = 1, b = 2, c = 3;
+
+a = b = b;
+
+console.log(a ,b, c);
+
+Que veriamos en el console? Para eso tenemos que revisar la tabla por la asociatividad del operador de asignacion "=".
+Este tiene una procedencia de 3 y una asociatividad de right-to-left , es decir que las operaciones se realizan primero
+de derecha a izquierda. En este caso, primero se realiza b = c y luego a = b (en realidad al resultado de b = c, que retorna
+el valor que se está asignando). Por lo tanto al final de todo, todas las variables van a tener el valor 3. Si la asociatividad
+hubiese sido al reves, todas las variables tendrian el valor 1.
